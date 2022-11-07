@@ -1,0 +1,64 @@
+' Gambas class file
+
+'######## PROPIEDADES ########
+
+Private password As String
+Private isOpen As Boolean
+
+'######## COMPORTAMIENTOS ########
+
+'Constructor
+
+Public Sub _new()
+  
+  password = "0000"
+  isOpen = False
+  
+End
+
+
+'Cambiar Constraseña
+
+Public Function changePassword(oldPassword As String, newPassword As String) As Boolean
+
+  If (oldPassword = password) And (newPassword.Len = 4) Then
+    
+    password = newPassword
+    Return True
+    
+  Endif 
+  
+    Return False
+  
+End 
+
+'Abrir
+
+Public Function openBox(userPassword As String) As Boolean
+
+  If userPassword = password Then
+    
+    isOpen = True
+    Return True
+    
+  Endif 
+  
+  Return False
+
+End
+
+Public Sub closeBox()
+
+  isOpen = False
+
+End
+
+'GETTER
+
+Public Function isClose() As Boolean
+  
+  Return Not isOpen
+  
+End
+
+

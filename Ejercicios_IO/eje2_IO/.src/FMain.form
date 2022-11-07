@@ -16,4 +16,20 @@
     MoveScaled(14,35,68,39)
     Font = Font["+7"]
   }
+  { lblResult2 Label
+    MoveScaled(55,29,5,10)
+    Font = Font["+7"]
+    Text = ("Y")
+  }
+  { lblResult3 Label
+    MoveScaled(10,29,5,10)
+    Font = Font["+7"]
+    Text = ("X")
+  }
+  { txtY TextBox
+    MoveScaled(60.5714,29,30,10)
+  }
+  { txtX TextBox
+    MoveScaled(15.7143,29,29,10)
+  }
 }

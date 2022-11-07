@@ -5,7 +5,7 @@
   { btnStart Button
     MoveScaled(54.2857,10,29,13)
     Font = Font["+6"]
-    Text = ("Calcular")
+    Text = ("Mostrar")
   }
   { btnReset Button
     MoveScaled(12.5714,10,29,13)

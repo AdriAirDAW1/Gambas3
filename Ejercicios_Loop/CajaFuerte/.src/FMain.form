@@ -1,0 +1,58 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,50,64.2857)
+  Text = ("Caja Fuerte")
+  Resizable = False
+  Border = False
+  { title3 Label
+    MoveScaled(1,36,49,4)
+    Visible = False
+    Font = Font["DejaVu Math TeX Gyre"]
+    Alignment = Align.Center
+    Text = ("INGRESE UNA NUEVA CONTRASEÑA")
+  }
+  { btn_change_pass Button
+    MoveScaled(10,37,30,9)
+    Font = Font["DejaVu Math TeX Gyre,+1"]
+    Background = Color.DarkYellow
+    Text = ("CAMBIAR CONTRASEÑA")
+  }
+  { btn_pass Button
+    MoveScaled(10,26,30,9)
+    Font = Font["DejaVu Math TeX Gyre,+1"]
+    Background = Color.DarkGreen
+    Text = ("INGRESAR")
+  }
+  { btn_exit Button
+    MoveScaled(10,48,30,9)
+    Font = Font["DejaVu Math TeX Gyre,+1"]
+    Background = Color.DarkRed
+    Text = ("SALIR")
+  }
+  { title Label
+    MoveScaled(7,5,36,7)
+    Font = Font["DejaVu Math TeX Gyre,Bold,+7"]
+    Background = Color.Transparent
+    Alignment = Align.Center
+    Text = ("CAJA FUERTE")
+  }
+  { title2 Label
+    MoveScaled(0.4286,19,49,4)
+    Font = Font["DejaVu Math TeX Gyre"]
+    Alignment = Align.Center
+    Text = ("SELECCIONE UNA OPCIÓN")
+  }
+  { input1 TextBox
+    MoveScaled(13,25,24,8)
+    Visible = False
+    Font = Font["DejaVu Math TeX Gyre,+3,Bold"]
+    Alignment = Align.Center
+  }
+  { input2 TextBox
+    MoveScaled(13,43,24,8)
+    Visible = False
+    Font = Font["DejaVu Math TeX Gyre,+3,Bold"]
+    Alignment = Align.Center
+  }
+}

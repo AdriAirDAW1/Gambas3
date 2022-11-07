@@ -3,17 +3,17 @@
 { Form Form
   MoveScaled(0,0,96,89)
   { btnStart Button
-    MoveScaled(54.2857,10,29,13)
+    MoveScaled(54.2857,5,29,8)
     Font = Font["+6"]
-    Text = ("Calcular")
+    Text = ("Ejecutar")
   }
   { btnReset Button
-    MoveScaled(12.5714,10,29,13)
+    MoveScaled(12.5714,5,29,8)
     Font = Font["+6"]
     Text = ("Limpiar")
   }
   { lblResult Label
-    MoveScaled(14,35,68,39)
-    Font = Font["+7"]
+    MoveScaled(13,16,68,69)
+    Font = Font["+2"]
   }
 }

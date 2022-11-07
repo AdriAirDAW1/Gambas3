@@ -1,0 +1,51 @@
+' Gambas class file
+
+Private num As New Integer[3]
+Private peque As Integer
+Private grande As Integer
+Private medio As Integer
+
+Public Sub btnStart_Click()
+
+        peque = 0
+        grande = 0
+        medio = 0
+
+        
+        num[0] = input1.Value
+        num[1] = input2.Value
+        num[2] = input3.Value
+
+        If (num[0] >= num[1] And num[0] >= num[2]) Then
+            grande = num[0]
+            num[0] = num[1]
+            num[1] = num[2]
+        Else If (num[1] >= num[0] And num[1] >= num[2]) Then
+            grande = num[1]
+            num[1] = num[2]
+        Else If (num[2] >= num[0] And num[2] >= num[1]) Then
+            grande = num[2]
+            num[1] = num[1]
+        Endif
+
+        If (num[0] <= num[1]) Then
+
+            medio = num[1]
+            peque = num[0]
+
+        Else If (num[1] <= num[0]) Then
+
+            medio = num[0]
+            peque = num[1]
+
+        Endif
+
+        lblResult.Text = peque & " <= " & medio & " <= " & grande
+
+End
+
+Public Sub btnReset_Click()
+
+  lblResult.Text = ""
+
+End

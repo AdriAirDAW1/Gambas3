@@ -1,0 +1,16 @@
+' Gambas class file
+
+Private nombre As String
+
+Public Sub btnStart_Click()
+
+  nombre = "Adrián Borio Muñoz"
+  lblResult.Text = nombre
+
+End
+
+Public Sub btnReset_Click()
+
+  lblResult.Text = ""
+
+End

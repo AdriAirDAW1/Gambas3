@@ -1,0 +1,41 @@
+' Gambas class file
+
+Public Sub btnStart_Click()
+
+  Select input1.Value
+    
+      Case 1
+        lblResult.Text = "Lunes"
+        
+      Case 2
+        lblResult.Text = "Martes"
+        
+      Case 3
+        lblResult.Text = "Miercoles"
+        
+      Case 4
+        lblResult.Text = "Jueves"
+        
+      Case 5
+        lblResult.Text = "Viernes"
+        
+      Case 6
+        lblResult.Text = "Sabado"
+        
+      Case 7
+        lblResult.Text = "Domingo"
+        
+      Default 
+        lblResult.Text = ""
+        
+        
+    
+  End Select
+
+End
+
+Public Sub btnReset_Click()
+
+  lblResult.Text = ""
+
+End

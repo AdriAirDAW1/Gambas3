@@ -1,0 +1,23 @@
+' Gambas class file
+
+Private x As Integer
+Private y As Integer
+
+Public Sub btnStart_Click()
+
+  If txtX.Text <> "" And txtY.Text <> "" Then 
+    
+    x = txtX.Text
+    y = txtY.Text
+    lblResult.Text = ""
+    lblResult.Text = "Suma: " & (x + y) & "\nResta: " & (x - y) & "\nMultiplicación: " & (x * y) & "\nDivisión: " & (x / y)
+    
+  Endif
+
+End
+
+Public Sub btnReset_Click()
+
+  lblResult.Text = ""
+
+End

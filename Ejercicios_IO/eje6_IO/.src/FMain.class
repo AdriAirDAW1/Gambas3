@@ -1,0 +1,13 @@
+' Gambas class file
+
+Public Sub btnStart_Click()
+
+  lblResult.Text = "Total sin IVA: " & (txtTotal.Text * 0.79)
+
+End
+
+Public Sub btnReset_Click()
+
+  lblResult.Text = ""
+
+End

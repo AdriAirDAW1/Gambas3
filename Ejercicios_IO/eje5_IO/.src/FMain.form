@@ -1,0 +1,43 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,96,89)
+  { btnStart Button
+    MoveScaled(54.2857,5,29,8)
+    Font = Font["+6"]
+    Text = ("Mostrar")
+  }
+  { btnReset Button
+    MoveScaled(12.5714,5,29,8)
+    Font = Font["+6"]
+    Text = ("Limpiar")
+  }
+  { lblResult Label
+    MoveScaled(14,44,68,39)
+    Font = Font["+7"]
+  }
+  { Label1 Label
+    MoveScaled(7.2857,20,28,8)
+    Font = Font["+5"]
+    Text = ("Nombre:")
+  }
+  { txtName TextBox
+    MoveScaled(42.5714,20,46,9)
+  }
+  { Label2 Label
+    MoveScaled(7.2857,31,28,8)
+    Font = Font["+5"]
+    Text = ("Dirección:")
+  }
+  { txtDireccion TextBox
+    MoveScaled(42.5714,31,46,9)
+  }
+  { Label3 Label
+    MoveScaled(7.2857,42,28,8)
+    Font = Font["+5"]
+    Text = ("Teléfono:")
+  }
+  { txtTelf TextBox
+    MoveScaled(42.5714,42,46,9)
+  }
+}

@@ -1,0 +1,27 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,96,89)
+  { btnStart Button
+    MoveScaled(54.2857,5,29,8)
+    Font = Font["+6"]
+    Text = ("Saludar")
+  }
+  { btnReset Button
+    MoveScaled(12.5714,5,29,8)
+    Font = Font["+6"]
+    Text = ("Limpiar")
+  }
+  { lblResult Label
+    MoveScaled(14,38,68,14)
+    Font = Font["+7"]
+  }
+  { Label1 Label
+    MoveScaled(19,20,10,9)
+    Font = Font["+5"]
+    Text = ("Hora:")
+  }
+  { input1 ValueBox
+    MoveScaled(32,20,52,9)
+  }
+}

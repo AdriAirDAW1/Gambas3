@@ -1,0 +1,29 @@
+' Gambas class file
+
+Public Sub btnStart_Click()
+
+  If (input1.Value > 0) And (input1.Value <= 24) Then 
+    
+    If (input1.Value >= 6) And (input1.Value <= 12) Then 
+    
+      lblResult.Text = "Buenos Días"
+      
+    Else If (input1.Value >= 13) And (input1.Value <= 20) Then 
+      
+      lblResult.Text = "Buenas Tardes"
+      
+    Else If (input1.Value >= 21) Or (input1.Value <= 5) Then 
+      
+      lblResult.Text = "Buenas Noches"
+      
+    Endif
+    
+  Endif
+
+End
+
+Public Sub btnReset_Click()
+
+  lblResult.Value = ""
+
+End

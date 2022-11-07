@@ -1,0 +1,25 @@
+' Gambas class file
+
+Public Sub btnStart_Click()
+
+  If input1.Value >= 0 Then 
+    
+    If input1.Value <= 40 Then 
+      
+      lblResult.Text = (input1.Value * 15) & "€"
+      
+    Else 
+      
+      lblResult.Text = ((40 * 15) + ((input1.Text - 40) * 20)) & "€" 
+      
+    Endif
+    
+  Endif
+
+End
+
+Public Sub btnReset_Click()
+
+  lblResult.Text = ""
+
+End

@@ -1,0 +1,131 @@
+' Gambas class file
+
+Private isOnMenu As Boolean = True
+Private miCaja As CajaFuerte 
+
+Public Sub Form_Open()
+
+  miCaja = New CajaFuerte
+
+End
+
+Public Sub btn_exit_Click()
+
+  If isOnMenu Then
+    
+    FMain.Close()
+    
+  Else 
+    
+    returnToMenu()
+    
+  Endif
+
+End
+
+Public Sub btn_change_pass_Click()
+
+  If isOnMenu Then
+    
+    isOnMenu = False
+    btn_change_pass.Hide()
+    title2.Text = "INGRESA LA ANTIGUA CONTRASEÑA\n(4 CARACTERES)"
+    title3.Show()
+    btn_pass.Text = "CAMBIAR"
+    btn_exit.Text = "VOLVER"
+    btn_pass.Width = 105
+    btn_exit.Width = 105
+    btn_exit.Y = 370
+    btn_pass.Y = 370
+    btn_pass.X = 30
+    btn_exit.X = 210
+    input1.Show()
+    input2.Show()
+    
+  Else 
+
+    
+    
+  Endif
+
+End
+
+Public Sub btn_pass_Click()
+
+  If isOnMenu Then
+    
+    isOnMenu = False
+    btn_change_pass.Hide()
+    title2.Text = "INGRESA LA CONTRASEÑA\n(4 CARACTERES)"
+    btn_pass.Text = "ABRIR"
+    btn_exit.Text = "VOLVER"
+    btn_pass.Width = 105
+    btn_exit.Width = 105
+    btn_exit.Y = 370
+    btn_pass.Y = 370
+    btn_pass.X = 30
+    btn_exit.X = 210
+    input1.Show()
+  
+  Else 
+    
+    If btn_pass.Text = "ABRIR" Then
+      
+      If miCaja.openBox(input1.Text) Then
+      
+      title2.Text = "CAJA ABIERTA CON ÉXITO"
+      btn_pass.Text = "CERRAR"
+    
+      Else 
+      
+      title2.Text = "CONTRASEÑA INCORRECTA"
+      
+      Endif
+    
+    Else If btn_pass.Text = "CERRAR" Then
+      
+      miCaja.closeBox()
+      title2.Text = "CAJA CERRADA CON ÉXITO"
+      btn_pass.Text = "ABRIR"
+    
+    Else If btn_pass.Text = "CAMBIAR" Then 
+      
+      If miCaja.changePassword(input1.text, input2.Text) Then 
+        
+        title2.Text = "CONTRASEÑA COINCIDE"
+        title3.Text = "CONTRAEÑA CAMBIADA CORRECTAMENTE"
+        
+        Else 
+          
+        title2.Text = "ERROR. CONTRASEÑA INCORRECTA??"
+        title3.Text = "ERROR. INTRODUCIR NUEVA PASSWORD"
+    
+      Endif
+      
+      
+    Endif 
+    Endif
+    'COMPROBAR CAJA Y ABRIR
+
+End
+
+Public Sub returnToMenu()
+  
+  input1.Hide()
+  input2.Hide()
+  title2.Text = "SELECCIONE UNA OPCIÓN"
+  title3.Hide()
+  btn_pass.Show()
+  btn_change_pass.Show()
+  btn_change_pass.Text = "CAMBIAR CONTRASEÑA"
+  btn_pass.Text = "INGRESAR"
+  btn_exit.Text = "SALIR"
+  btn_pass.Width = 210
+  btn_exit.Width = 210
+  btn_exit.X = 70
+  btn_exit.Y = 336
+  btn_pass.X = 70
+  btn_pass.Y = 182
+  isOnMenu = True
+  
+End

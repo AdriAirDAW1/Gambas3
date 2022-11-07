@@ -1,0 +1,24 @@
+' Gambas class file
+
+Private i As Integer
+
+Public Sub btnStart_Click()
+
+  lblResult.Text = ""
+  i = 20
+  
+  Do 
+  
+  lblResult.Text = lblResult.Text & "\n" & i
+  i = i - 1
+    
+  Loop Until i = 0
+  
+
+End
+
+Public Sub btnReset_Click()
+
+  lblResult.Text = ""
+
+End

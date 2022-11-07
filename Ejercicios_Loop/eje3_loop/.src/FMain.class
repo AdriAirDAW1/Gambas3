@@ -1,0 +1,23 @@
+' Gambas class file
+
+Private i As Integer
+
+Public Sub btnStart_Click()
+
+  lblResult.Text = ""
+  i = 1
+  
+  Do
+    
+    lblResult.Text = lblResult.Text & "\n" & (input1.Value * i)
+    i = i + 1
+    
+  Loop Until i = 11
+    
+End
+
+Public Sub btnReset_Click()
+
+  lblResult.Text = ""
+
+End

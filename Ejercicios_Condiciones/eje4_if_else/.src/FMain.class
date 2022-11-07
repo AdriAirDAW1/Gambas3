@@ -1,0 +1,35 @@
+' Gambas class file
+
+Private media As Float
+
+Public Sub btnStart_Click()
+
+  media = (input1.Value + input2.Value + input3.Value) / 3
+  
+  If media >= 0 And media < 5 Then 
+    lblResult.Text = "Insuficiente"
+    
+  Else If media >= 5 And media < 6 Then 
+    lblResult.Text = "Suficiente"
+    
+  Else If media >= 6 And media < 7 Then 
+    lblResult.Text = "Bien"
+    
+  Else If media >= 7 And media < 8.5 Then 
+    lblResult.Text = "Notable"
+    
+  Else If media >= 8.5 And media <= 10 Then 
+    lblResult.Text = "Sobresaliente"
+    
+  Else
+    lblResult.Text = "Notas invalidas"
+    
+  Endif
+
+End
+
+Public Sub btnReset_Click()
+
+  lblResult.Text = ""
+
+End
