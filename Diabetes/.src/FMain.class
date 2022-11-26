@@ -1,0 +1,131 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+  FMain.Border = True
+  FMain.Background = Color.RGB(80, 80, 80)
+  FMain.Foreground = Color.RGB(255, 255, 255)
+  FMain.Title = "Test de Glucemia"
+  FMain.Resizable = False
+  FMain.Width = 600
+  FMain.Height = 450
+  FMain.Y = 100
+  FMain.X = (Screen.Width / 2) - (FMain.Width / 2)
+  
+  mySlider.Width = 300
+  mySlider.X = (FMain.ClientW / 2) - (mySlider.Width / 2)
+  mySlider.Y = 50
+  mySlider.MaxValue = 300
+  mySlider.MinValue = 0
+  mySlider.Value = 90
+    
+  mySliderLabel.Text = "Glucosa (mg/dl)"
+  mySliderLabel.Font.Name = "Ubuntu"
+  mySliderLabel.Font.Size = 18
+  mySliderLabel.Width = 300
+  mySliderLabel.Height = 30
+  mySliderLabel.Y = 15
+  mySliderLabel.X = (FMain.ClientW / 2) - (mySliderLabel.Width / 2)
+  mySliderLabel.Alignment = 3
+  
+  myInfoLabel.Font.Name = "Ubuntu"
+  myInfoLabel.Font.Size = 18
+  myInfoLabel.Text = ""
+  myInfoLabel.Width = 400
+  myInfoLabel.Height = 300
+  myInfoLabel.Alignment = 3
+  myInfoLabel.X = (FMain.ClientW / 2) - (myInfoLabel.Width / 2)
+  myInfoLabel.Y = 100
+  myInfoLabel.Background = Color.RGB(160, 160, 160)
+  myInfoLabel.Foreground = Color.RGB(0, 0, 0)
+  
+  myInfoLabel2.Hide()
+  myInfoLabel2.Font.Name = "Ubuntu"
+  myInfoLabel2.Font.Size = 14
+  myInfoLabel2.Text = ""
+  myInfoLabel2.Width = 400
+  myInfoLabel2.Height = 300
+  myInfoLabel2.Alignment = 3
+  myInfoLabel2.X = (FMain.ClientW / 2) - (myInfoLabel.Width / 2)
+  myInfoLabel2.Y = 450
+  myInfoLabel2.Background = Color.RGB(160, 160, 160)
+  myInfoLabel2.Foreground = Color.RGB(0, 0, 0)
+  
+  radioFalse.Text = "No"
+  radioFalse.Font.Name = "Ubuntu"
+  radioFalse.Font.Size = 14
+  radioFalse.Width = 50
+  radioFalse.X = (FMain.ClientW / 2) + (radioFalse.Width * 2)
+  radioFalse.Y = 410
+  radioFalse.Hide()
+  
+  radioTrue.Text = "Sí"
+  radioTrue.Font.Name = "Ubuntu"
+  radioTrue.Font.Size = 14
+  radioTrue.Width = 50
+  radioTrue.X = (FMain.ClientW / 2)
+  radioTrue.Y = 410
+  radioTrue.Hide()
+  
+  myRadioLabel.Font.Name = "Ubuntu"
+  myRadioLabel.Font.Size = 14
+  myRadioLabel.Text = "¿Está conciente?"
+  myRadioLabel.Width = 150
+  myRadioLabel.Height = 25
+  myRadioLabel.Alignment = 3
+  myRadioLabel.X = (FMain.ClientW / 2) - (myRadioLabel.Width * 1.15)
+  myRadioLabel.Y = 410
+  myRadioLabel.Foreground = Color.RGB(255, 255, 255)
+  myRadioLabel.Hide()
+  
+  myTimer.Delay = 100
+  myTimer.Start()
+    
+End
+
+Public Sub myTimer_Timer()
+
+  If (mySlider.Value < 70) Then
+  
+    myInfoLabel.Text = "Hipoglucemia detectada."
+    
+    FMain.Height = 800
+    myRadioLabel.Show()
+    radioFalse.Show()
+    radioTrue.Show()
+    myInfoLabel2.Show()
+    
+    If (radioTrue.Value = True) Then 
+      
+      myInfoLabel2.Text = "Dar líquidos azucarados de\nabsorción rápida como\nZumos, glucosports, azúcar...\nRepetir glucemis 5-10 minutos después.\nDar hidratos de carbono de absorción\nlenta como galletas, pan, chocolate..."
+      
+    Else If (radioFalse.Value = True) Then 
+      
+      myInfoLabel2.Text = "NO dar nada por boca.\nAdministar Glucagón y\navisar a familiares y emergéncias."
+      
+    Endif
+    
+  Else If (mySlider.Value >= 70 And mySlider.Value <= 180) Then 
+  
+    myInfoLabel.Text = "Estado normal. Todo en orden"
+    
+    FMain.Height = 450
+    myRadioLabel.Hide()
+    radioFalse.Hide()
+    radioTrue.Hide()
+    myInfoLabel2.Hide()
+    
+  Else 
+  
+    myInfoLabel.Text = "Hyperglucemia detectada.\nAdministre Agua y avise familiares."
+    
+    FMain.Height = 450
+    myRadioLabel.Hide()
+    radioFalse.Hide()
+    radioTrue.Hide()
+    myInfoLabel2.Hide()
+  
+  Endif 
+
+End

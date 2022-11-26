@@ -1,0 +1,29 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,109,25)
+  { myTimer #Timer
+  }
+  { mySliderLabel Label
+    MoveScaled(31.4286,0,8,3)
+  }
+  { mySlider SliderBox
+    MoveScaled(39.4286,0,32,4)
+  }
+  { myInfoLabel Label
+    MoveScaled(7,0,8,3)
+  }
+  { myInfoLabel2 Label
+    MoveScaled(15,0,8,3)
+  }
+  { radioTrue RadioButton
+    MoveScaled(71.4286,0,24,4)
+    Value = True
+  }
+  { radioFalse RadioButton
+    MoveScaled(7,3,24,4)
+  }
+  { myRadioLabel Label
+    MoveScaled(23,0,8,3)
+  }
+}
