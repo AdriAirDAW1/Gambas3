@@ -10,8 +10,8 @@ Public Sub btnStart_Click()
   
   While i >= 1
   
-  lblResult.Text = lblResult.Text & "\n" & i
-  i = i - 1
+    lblResult.Text = lblResult.Text & "\n" & i
+    i = i - 1
     
   Wend
   

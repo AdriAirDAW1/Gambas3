@@ -69,7 +69,7 @@ Public Sub btn_pass_Click()
   
   Else 
     
-    If btn_pass.Text = "ABRIR" Then
+    If btn_pass.Text = "ABRIR" Then 
       
       If miCaja.openBox(input1.Text) Then
       
@@ -90,6 +90,8 @@ Public Sub btn_pass_Click()
     
     Else If btn_pass.Text = "CAMBIAR" Then 
       
+      
+      
       If miCaja.changePassword(input1.text, input2.Text) Then 
         
         title2.Text = "CONTRASEÑA COINCIDE"
@@ -100,12 +102,14 @@ Public Sub btn_pass_Click()
         title2.Text = "ERROR. CONTRASEÑA INCORRECTA??"
         title3.Text = "ERROR. INTRODUCIR NUEVA PASSWORD"
     
-      Endif
+        Endif
       
+      Endif 
       
-    Endif 
     Endif
-    'COMPROBAR CAJA Y ABRIR
+    
+    input1.Text = ""
+    input2.Text = ""
 
 End
 
@@ -127,5 +131,7 @@ Public Sub returnToMenu()
   btn_pass.X = 70
   btn_pass.Y = 182
   isOnMenu = True
+  input1.Text = ""
+  input2.Text = ""
   
 End

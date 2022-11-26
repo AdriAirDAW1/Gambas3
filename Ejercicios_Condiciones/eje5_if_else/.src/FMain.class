@@ -25,7 +25,6 @@ Public Sub btnStart_Click()
             num[1] = num[2]
         Else If (num[2] >= num[0] And num[2] >= num[1]) Then
             grande = num[2]
-            num[1] = num[1]
         Endif
 
         If (num[0] <= num[1]) Then
