@@ -1,0 +1,47 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,95,118)
+  Resizable = False
+  { btnThink Button
+    MoveScaled(13,97,69,14)
+    Font = Font["+4"]
+    Text = ("Piensa")
+  }
+  { Label1 Label
+    MoveScaled(8,5,78,11)
+    Font = Font["+4"]
+    Background = Color.Transparent
+    Text = ("Información")
+  }
+  { Label2 Label
+    MoveScaled(8,45,78,11)
+    Font = Font["+4"]
+    Background = Color.Transparent
+    Text = ("Resultado")
+  }
+  { Label3 Label
+    MoveScaled(8,25,78,11)
+    Font = Font["+4"]
+    Background = Color.Transparent
+    Text = ("Comando")
+  }
+  { txtBoxInfo TextBox
+    MoveScaled(8,13,78,11)
+    Font = Font["+3"]
+    Background = Color.TooltipBackground
+    Foreground = Color.Black
+  }
+  { txtBoxCommand TextBox
+    MoveScaled(8,33,78,11)
+    Font = Font["+3"]
+    Background = Color.TooltipBackground
+    Foreground = Color.Black
+  }
+  { txtBoxResult TextBox
+    MoveScaled(8,53,78,11)
+    Font = Font["+3"]
+    Background = Color.TooltipBackground
+    Foreground = Color.Black
+  }
+}

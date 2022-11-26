@@ -1,0 +1,60 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,112,109)
+  Background = Color.ButtonForeground
+  Text = ("Adrián Borio Muñoz")
+  { lbl1 Label
+    MoveScaled(13,4,85,9)
+    Font = Font["+3,Italic"]
+    Foreground = Color.Background
+    Text = ("Entrada de Datos")
+  }
+  { lbl2 Label
+    MoveScaled(13,29,85,9)
+    Font = Font["+3,Italic"]
+    Foreground = Color.Background
+    Text = ("Resultado")
+  }
+  { txtboxInput TextBox
+    MoveScaled(13,12,85,12)
+    Font = Font["+2,Italic"]
+    Background = Color.SoftGreen
+    Foreground = Color.Background
+  }
+  { lblResults Label
+    MoveScaled(13,37,85,21)
+    Font = Font["+3,Italic"]
+    Background = Color.SoftYellow
+    Foreground = Color.Background
+    Border = Border.Plain
+  }
+  { btnName Button
+    MoveScaled(13,65,28,13)
+    Font = Font["+2,Italic"]
+    Background = Color.Foreground
+    Foreground = Color.Background
+    Text = ("Nombre")
+  }
+  { btnSquare Button
+    MoveScaled(70,65,28,13)
+    Font = Font["+2,Italic"]
+    Background = Color.Foreground
+    Foreground = Color.Background
+    Text = ("Cuadrado")
+  }
+  { btnLastName Button
+    MoveScaled(13,86,28,13)
+    Font = Font["+2,Italic"]
+    Background = Color.Foreground
+    Foreground = Color.Background
+    Text = ("Apellidos")
+  }
+  { btnDouble Button
+    MoveScaled(70,86,28,13)
+    Font = Font["+2,Italic"]
+    Background = Color.Foreground
+    Foreground = Color.Background
+    Text = ("Doble")
+  }
+}

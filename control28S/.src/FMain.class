@@ -1,0 +1,25 @@
+' Gambas class file
+
+Public Sub btnName_Click()
+
+  lblResults.Text = "Adrián"
+
+End
+
+Public Sub btnLastName_Click()
+
+  lblResults.Text = "Borio Muñoz"
+
+End
+
+Public Sub btnDouble_Click()
+
+  lblResults.Text = txtboxInput.Text * 2
+
+End
+
+Public Sub btnSquare_Click()
+
+  lblResults.Text = txtboxInput.Text * txtboxInput.Text
+  
+End

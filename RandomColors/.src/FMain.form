@@ -1,0 +1,29 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,168,109)
+  Resizable = False
+  Border = False
+  { btnPlay Button
+    MoveScaled(4,98,38,8)
+    Font = Font["+6"]
+    Text = ("Jugar")
+  }
+  { btnPause Button
+    MoveScaled(45,98,38,8)
+    Font = Font["+6"]
+    Text = ("Pausar")
+  }
+  { game DrawingArea
+    MoveScaled(1,1,166,95)
+    { myTimer #Timer
+      #MoveScaled(156,85)
+      Delay = 100
+    }
+  }
+  { btnClose Button
+    MoveScaled(144,98,22,8)
+    Font = Font["+6"]
+    Text = ("Salir")
+  }
+}

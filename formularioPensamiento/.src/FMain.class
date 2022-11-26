@@ -1,0 +1,29 @@
+' Gambas class file
+
+Public Sub btnThink_Click()
+
+  Dim separator As Integer
+  Dim lNum, rNum, result As Float
+ 
+  separator = InStr(txtBoxInfo.Text, ";")
+  If separator >= 2 And separator <> Len(txtBoxInfo.Text) Then
+    lNum = Left(txtBoxInfo.Text, separator - 1)
+    rNum = Mid(txtBoxInfo.Text, separator + 1, Len(txtBoxInfo.Text))
+    If txtBoxCommand.Text = "Sumar" Or txtBoxCommand.Text = "sumar" Then 
+      result = lNUm + rNum
+    Else If txtBoxCommand.Text = "Restar" Or txtBoxCommand.Text = "restar" Then 
+      result = lNum - rNum
+    Else If txtBoxCommand.Text = "Multiplicar" Or txtBoxCommand.Text = "multiplicar" Then 
+      result = lNum * rNum
+    Else If txtBoxCommand.Text = "Dividir" Or txtBoxCommand.Text = "dividir" Then 
+      result = lNum / rNum 
+    Else If txtBoxCommand.Text = "Potencia" Or txtBoxCommand.Text = "potencia" Then 
+      result = lNum ^ rNum
+    Else 
+      txtBoxResult.Text = "ERROR"
+    Endif
+    txtBoxResult.Text = result
+  Else 
+    txtBoxResult.Text = "ERROR"
+  Endif 
+End

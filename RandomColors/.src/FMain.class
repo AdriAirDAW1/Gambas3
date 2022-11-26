@@ -1,0 +1,26 @@
+' Gambas class file
+
+Public Sub btnPlay_Click()
+
+myTimer.Enabled = True
+
+End
+
+Public Sub btnPause_Click()
+
+myTimer.Enabled = False
+
+End 
+
+Public Sub myTimer_Timer()
+
+  game.Background = Color.RGB(Rand(0, 255), Rand(0, 255), Rand(0, 255))
+  game.Refresh()
+  
+End
+
+Public Sub btnClose_Click()
+
+  FMain.Close()
+
+End
