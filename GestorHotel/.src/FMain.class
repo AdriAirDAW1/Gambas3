@@ -1,0 +1,14 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+  FMain.Border = True
+  
+  FMain.Title = "Gestor de Hotel"
+  
+  myTabs.Width = FMain.Width
+  myTabs.Height = FMain.Height
+  
+  
+End

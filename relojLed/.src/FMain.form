@@ -1,0 +1,48 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,89,51)
+  { hours TextBox
+    MoveScaled(0,0,24,4)
+  }
+  { minutes TextBox
+    MoveScaled(24.4444,0,24,4)
+  }
+  { seconds TextBox
+    MoveScaled(48.8889,0,24,4)
+  }
+  { miliSeconds TextBox
+    MoveScaled(0,4,24,4)
+  }
+  { status Button
+    MoveScaled(72.8889,0,16,4)
+  }
+  { btnEdit Button
+    MoveScaled(24,4,16,4)
+  }
+  { myDivisor1 Label
+    MoveScaled(40,4,8,3)
+  }
+  { myDivisor2 Label
+    MoveScaled(48,4,8,3)
+  }
+  { myDivisor3 Label
+    MoveScaled(56,4,8,3)
+  }
+  { myTimer1 #Timer
+    #MoveScaled(64,4)
+  }
+  { reset Button
+    MoveScaled(70,4,16,4)
+  }
+  { upOpt RadioButton
+    MoveScaled(0,9,24,4)
+  }
+  { downOpt RadioButton
+    MoveScaled(22,9,24,4)
+    Value = True
+  }
+  { isLoopOpt CheckBox
+    MoveScaled(34,9,24,4)
+  }
+}

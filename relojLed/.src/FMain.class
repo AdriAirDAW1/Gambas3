@@ -1,0 +1,309 @@
+' Gambas class file
+
+Private myClock As Clock
+
+Public Sub Form_Open()
+
+'VENTANA MAIN
+FMain.Width = 500
+FMain.Height = 500
+FMain.Title = "Reloj LED"
+FMain.Resizable = False
+
+'OBJETOS
+
+myClock = New Clock
+
+'RELOJ
+hours.ReadOnly = True
+hours.Width = 100
+hours.Height = 100
+hours.X = ((FMain.Width / 4) * 0) + 30
+hours.Y = 10
+hours.Alignment = Align.Center
+hours.Background = Color.Transparent
+hours.Foreground = Color.DarkGreen
+hours.Font = Font["Mono, 64"]
+hours.Border = False
+hours.Text = "00"
+hours.Placeholder = "Hora(00-23)"
+hours.Enabled = True
+hours.Visible = True
+hours.MaxLength = 2
+
+minutes.ReadOnly = True
+minutes.Width = 100
+minutes.Height = 100
+minutes.X = ((FMain.Width / 4) * 1) + 30
+minutes.Y = 10
+minutes.Alignment = Align.Center
+minutes.Background = Color.Transparent
+minutes.Foreground = Color.DarkGreen
+minutes.Font = Font["Mono, 64"]
+minutes.Border = False
+minutes.Text = "00"
+minutes.Placeholder = "Hora(00-23)"
+minutes.Enabled = True
+minutes.Visible = True
+minutes.MaxLength = 2
+
+seconds.ReadOnly = True
+seconds.Width = 100
+seconds.Height = 100
+seconds.X = ((FMain.Width / 4) * 2) + 30
+seconds.Y = 10
+seconds.Alignment = Align.Center
+seconds.Background = Color.Transparent
+seconds.Foreground = Color.DarkGreen
+seconds.Font = Font["Mono, 64"]
+seconds.Border = False
+seconds.Text = "00"
+seconds.Placeholder = "Hora(00-23)"
+seconds.Enabled = True
+seconds.Visible = True
+seconds.MaxLength = 2
+
+miliSeconds.ReadOnly = True
+miliSeconds.Width = 50
+miliSeconds.Height = 100
+miliSeconds.X = ((FMain.Width / 4) * 3) + 30
+miliSeconds.Y = 10
+miliSeconds.Alignment = Align.Center
+miliSeconds.Background = Color.Transparent
+miliSeconds.Foreground = Color.DarkGreen
+miliSeconds.Font = Font["Mono, 64"]
+miliSeconds.Border = False
+miliSeconds.Text = "0"
+miliSeconds.Placeholder = "Hora(00-23)"
+miliSeconds.Enabled = True
+miliSeconds.Visible = True
+miliSeconds.MaxLength = 1
+
+myDivisor1.Width = 100
+myDivisor1.Height = 100
+myDivisor1.X = ((FMain.Width / 4) * 0) + 93
+myDivisor1.Y = 0
+myDivisor1.Alignment = Align.Center
+myDivisor1.Background = Color.Transparent
+myDivisor1.Foreground = Color.DarkGreen
+myDivisor1.Font = Font["Mono, 64"]
+myDivisor1.Border = False
+myDivisor1.Text = ":"
+myDivisor1.Visible = True
+
+myDivisor2.Width = 100
+myDivisor2.Height = 100
+myDivisor2.X = ((FMain.Width / 4) * 1) + 93
+myDivisor2.Y = 0
+myDivisor2.Alignment = Align.Center
+myDivisor2.Background = Color.Transparent
+myDivisor2.Foreground = Color.DarkGreen
+myDivisor2.Font = Font["Mono, 64"]
+myDivisor2.Border = False
+myDivisor2.Text = ":"
+myDivisor2.Visible = True
+
+myDivisor3.Width = 100
+myDivisor3.Height = 100
+myDivisor3.X = ((FMain.Width / 4) * 2) + 93
+myDivisor3.Y = 0
+myDivisor3.Alignment = Align.Center
+myDivisor3.Background = Color.Transparent
+myDivisor3.Foreground = Color.DarkGreen
+myDivisor3.Font = Font["Mono, 64"]
+myDivisor3.Border = False
+myDivisor3.Text = ":"
+myDivisor3.Visible = True
+
+'OTHER
+btnEdit.X = (Fmain.Width / 8) * 1
+btnEdit.y = (Fmain.Height / 20) * 12
+btnEdit.Height = 75
+btnEdit.Width = 150
+btnEdit.Text = "Editar"
+btnEdit.Background = Color.DarkGreen
+btnEdit.Font = Font["Mono, 16"]
+
+status.X = (Fmain.Width / 8) * 1
+status.y = (Fmain.Height / 20) * 7.15
+status.Height = 75
+status.Width = 150
+status.Text = "Reproducir"
+status.Background = Color.DarkGreen
+status.Font = Font["Mono, 16"]
+
+reset.X = (FMain.Width / 2)
+reset.y = (Fmain.Height / 20) * 12
+reset.Height = 75
+reset.Width = 150
+reset.Text = "Resetear"
+reset.Background = Color.DarkGreen
+reset.Font = Font["Mono, 16"]
+
+upOpt.Text = "Progresiva"
+upOpt.Width = 200
+upOpt.Height = 30
+upOpt.X = (FMain.Width / 2)
+upOpt.Y = (FMain.Width / 20) * 7
+upOpt.Font = Font["Mono, 14"]
+upOpt.Value = True
+
+downOpt.Text = "Regresiva"
+downOpt.Width = 200
+downOpt.Height = 30
+downOpt.X = (FMain.Width / 2)
+downOpt.Y = (FMain.Height / 20) * 8
+downOpt.Font = Font["Mono, 14"]
+
+isLoopOpt.Text = "¿Ejecutar en bucle?"
+isLoopOpt.Width = 250
+isLoopOpt.Height = 30
+isLoopOpt.X = (FMain.Width / 2)
+isLoopOpt.Y = (FMain.Height / 20) * 9.5
+isLoopOpt.Font = Font["Mono, 14"]
+isLoopOpt.Value = True
+
+myTimer1.Delay = 100
+myTimer1.Start()
+
+End
+
+Public Sub reset_Click()
+  
+  myClock.reset()
+  hours.Text = "00"
+  minutes.Text = "00"
+  seconds.Text = "00"
+  miliSeconds.Text = "0"
+  status.Text = "Reproducir"
+  upOpt.Enabled = True
+  downOpt.Enabled = True
+  isLoopOpt.Enabled = True
+  
+End
+
+Public Sub status_Click()
+  
+  If status.Text = "Reproducir" Then
+    
+    status.Text = "Pausar"
+    myClock.start()
+    
+  Else If status.Text = "Pausar" Then
+    
+    status.Text = "Reproducir"
+    myClock.stop()
+    upOpt.Enabled = True
+    downOpt.Enabled = True
+    isLoopOpt.Enabled = True
+    
+  Endif
+  
+End
+
+
+Public Sub btnEdit_Click()
+  
+  If btnEdit.Text = "Editar" Then
+    
+    btnEdit.Text = "Aplicar"
+    status.Enabled = False
+    hours.ReadOnly = False
+    hours.Background = Color.RGB(80, 80, 80)
+    minutes.ReadOnly = False
+    minutes.Background = Color.RGB(80, 80, 80)
+    seconds.ReadOnly = False
+    seconds.Background = Color.RGB(80, 80, 80)
+    miliSeconds.ReadOnly = False
+    miliSeconds.Background = Color.RGB(80, 80, 80)
+    myClock.stop()
+    status.Text = "Reproducir"
+    upOpt.Enabled = True
+    downOpt.Enabled = True
+    isLoopOpt.Enabled = True
+  
+  Else If btnEdit.Text = "Aplicar" Then 
+    
+    btnEdit.Text = "Editar"
+    status.Enabled = True
+    hours.ReadOnly = True
+    hours.Background = Color.Transparent
+    minutes.ReadOnly = True
+    minutes.Background = Color.Transparent
+    seconds.ReadOnly = True
+    seconds.Background = Color.Transparent
+    miliSeconds.ReadOnly = True
+    miliSeconds.Background = Color.Transparent
+    myClock.setHours(hours.Text)
+    myClock.setMinutes(minutes.Text)
+    myClock.setSeconds(seconds.Text)
+    myClock.setMiliSeconds(miliSeconds.Text)
+  
+  Endif
+  
+End
+
+Public Sub myTimer1_Timer()
+
+  If (myClock.getStatus()) Then
+    
+    If upOpt.Value Then
+      
+      myClock.runUp(isLoopOpt.Value)
+      upOpt.Enabled = False
+      downOpt.Enabled = False
+      isLoopOpt.Enabled = False
+    
+    Else If downOpt.Value Then 
+      
+      myClock.runDown(isLoopOpt.Value)
+      upOpt.Enabled = False
+      downOpt.Enabled = False
+      isLoopOpt.Enabled = False
+    
+    Endif
+    
+    If myClock.getHours() <= 9 Then
+      
+       hours.Text = "0" & myClock.getHours()
+      
+    Else 
+      
+       hours.Text = myClock.getHours()
+      
+    Endif 
+    
+    If myClock.getMinutes() <= 9 Then
+      
+      minutes.Text = "0" & myClock.getMinutes()
+      
+    Else 
+      
+      minutes.Text = myClock.getMinutes()
+    
+    Endif
+    
+    If myClock.getSeconds() <= 9 Then
+      
+      seconds.Text = "0" & myClock.getSeconds()
+    
+    Else 
+      
+      seconds.Text = myClock.getSeconds()
+     
+    Endif
+    
+    miliSeconds.Text = myClock.getMiliSeconds()
+    
+  Endif
+
+  Form.Refresh()
+  btnEdit.Refresh()
+  FMain.Refresh()
+  hours.Refresh()
+  minutes.Refresh()
+  seconds.Refresh()
+  miliSeconds.Refresh()
+  
+
+End

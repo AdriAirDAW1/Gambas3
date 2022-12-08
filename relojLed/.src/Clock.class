@@ -1,0 +1,194 @@
+' Gambas class file
+
+Private hours As Integer
+Private minutes As Integer
+Private seconds As Integer
+Private miliSeconds As Integer
+Private status As Boolean
+
+Public Sub _new()
+  
+  hours = 0
+  minutes = 0
+  seconds = 0
+  miliSeconds = 0
+  status = False
+  
+End
+
+Public Sub stop()
+  
+  If (status) Then
+    
+    status = False
+    
+  Endif
+  
+End
+
+Public Sub reset()
+  
+  stop()
+  hours = 0
+  minutes = 0
+  seconds = 0
+  miliSeconds = 0  
+  
+End
+
+Public Sub start()
+  
+  If (Not status) Then
+    
+    status = True
+    
+  Endif
+  
+End
+
+
+'EL TIMER TIENE QUE TENER UN DELAY DE 100ms
+Public Sub runUp(isLoop As Boolean)
+  
+  miliSeconds = miliSeconds + 1
+  
+  If miliSeconds > 9 Then
+    
+    miliseconds = 0
+    seconds = seconds + 1
+    
+    If seconds > 59 Then
+      
+      seconds = 0
+      minutes = minutes + 1
+      
+      If minutes > 59 Then
+        
+        minutes = 0
+        hours = hours + 1
+        
+        If hours > 23 Then
+          
+          If isLoop Then
+            
+            hours = 0
+            
+          Else 
+            
+            hours = 23
+            minutes = 59
+            seconds = 59
+            miliSeconds = 9
+            stop()
+          
+          Endif 
+          
+        Endif
+        
+      Endif
+      
+    Endif
+    
+  Endif
+  
+End
+
+Public Sub runDown(isLoop As Boolean)
+  
+  miliSeconds = miliSeconds - 1
+  
+  If miliSeconds <= 0 Then
+    
+    miliseconds = 9
+    seconds = seconds - 1
+    
+    If seconds <= 0 Then
+      
+      seconds = 59
+      minutes = minutes - 1
+      
+      If minutes <= 0 Then
+        
+        minutes = 59
+        hours = hours - 1
+        
+        If hours <= 0 Then
+          
+          If isLoop Then
+            
+            hours = 23
+            
+          Else 
+            
+            hours = 0
+            minutes = 0
+            seconds = 0
+            miliSeconds = 0
+            stop()
+            
+          Endif
+          
+        Endif
+        
+      Endif
+      
+    Endif
+    
+  Endif
+  
+End
+
+Public Function getHours() As Integer
+  
+  Return hours
+  
+End
+
+Public Function getMinutes() As Integer
+  
+  Return minutes
+  
+End
+
+Public Function getSeconds() As Integer
+  
+  Return seconds
+  
+End
+
+Public Function getMiliSeconds() As Integer
+  
+  Return miliSeconds
+  
+End
+
+Public Sub setHours(hour As String)
+  
+  hours = Val(hour)
+  
+End
+
+Public Sub setMinutes(minute As String)
+  
+  minutes = Val(minute)
+  
+End
+
+Public Sub setSeconds(second As String)
+  
+  seconds = Val(second)
+  
+End
+
+Public Sub setMiliSeconds(miliSecond As String)
+  
+  miliSeconds = Val(miliSecond)
+  
+End
+
+Public Function getStatus() As Boolean
+  
+  Return status
+  
+End
+
