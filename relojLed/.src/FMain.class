@@ -141,25 +141,25 @@ reset.Text = "Resetear"
 reset.Background = Color.DarkGreen
 reset.Font = Font["Mono, 16"]
 
-upOpt.Text = "Progresiva"
+upOpt.Text = " Progresiva"
 upOpt.Width = 200
 upOpt.Height = 30
-upOpt.X = (FMain.Width / 2)
+upOpt.X = (FMain.Width / 2.1)
 upOpt.Y = (FMain.Width / 20) * 7
 upOpt.Font = Font["Mono, 14"]
 upOpt.Value = True
 
-downOpt.Text = "Regresiva"
+downOpt.Text = " Regresiva"
 downOpt.Width = 200
 downOpt.Height = 30
-downOpt.X = (FMain.Width / 2)
+downOpt.X = (FMain.Width / 2.1)
 downOpt.Y = (FMain.Height / 20) * 8
 downOpt.Font = Font["Mono, 14"]
 
-isLoopOpt.Text = "¿Ejecutar en bucle?"
+isLoopOpt.Text = " ¿Ejecutar en bucle?"
 isLoopOpt.Width = 250
 isLoopOpt.Height = 30
-isLoopOpt.X = (FMain.Width / 2)
+isLoopOpt.X = (FMain.Width / 2.1)
 isLoopOpt.Y = (FMain.Height / 20) * 9.5
 isLoopOpt.Font = Font["Mono, 14"]
 isLoopOpt.Value = True
@@ -238,37 +238,37 @@ Public Sub btnEdit_Click()
     
     If Not IsNumber(hours.Text) Then 
       
-      hours.Text = "00"
+      hours.Text = myClock.getHours()
     
     Else If (Val(hours.Text) > 23) Then
       
-      hours.Text = "00"
+      hours.Text = myClock.getHours()
     
     Endif
     
     If Not IsNumber(minutes.Text) Then 
       
-      minutes.Text = "00"
+      minutes.Text = myClock.getMinutes()
     
     Else If (Val(minutes.Text) > 59) Then
       
-      minutes.Text = "00"
+      minutes.Text = myClock.getMinutes()
     
     Endif
     
     If Not IsNumber(seconds.Text) Then 
       
-      seconds.Text = "00"
+      seconds.Text = myClock.getSeconds()
     
     Else If (Val(seconds.Text) > 59) Then
       
-      seconds.Text = "00"
+      seconds.Text = myClock.getSeconds()
     
     Endif
     
     If Not IsNumber(miliSeconds.Text) Then 
       
-      miliSeconds.Text = "0"
+      miliSeconds.Text = myClock.getMiliSeconds()
 
     Endif
     
