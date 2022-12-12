@@ -1,10 +1,17 @@
 # Gambas Project File 3.0
 Title=relojLed
 Startup=FMain
-Version=0.0.1
+Version=0.0.3
 Component=gb.image
 Component=gb.gui
 Component=gb.form
 TabSize=2
 Language=en_US
+Maintainer=adriair-school
+Address=adriair-school@AdriLinLaptop
+License=General Public License
+PackageName=relojled-0.0.3
 Packager=1
+Systems=ubuntu
+Menus=ubuntu:"Games/Tools"
+Groups=ubuntu:"utils"

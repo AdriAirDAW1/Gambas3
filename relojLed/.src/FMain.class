@@ -9,6 +9,7 @@ FMain.Width = 500
 FMain.Height = 500
 FMain.Title = "Reloj LED"
 FMain.Resizable = False
+FMain.Icon = Picture.Load("./assets/time.ico")
 
 'OBJETOS
 
@@ -18,7 +19,7 @@ myClock = New Clock
 hours.ReadOnly = True
 hours.Width = 100
 hours.Height = 100
-hours.X = ((FMain.Width / 4) * 0) + 30
+hours.X = ((FMain.Width / 4) * 0) + 40
 hours.Y = 10
 hours.Alignment = Align.Center
 hours.Background = Color.Transparent
@@ -34,7 +35,7 @@ hours.MaxLength = 2
 minutes.ReadOnly = True
 minutes.Width = 100
 minutes.Height = 100
-minutes.X = ((FMain.Width / 4) * 1) + 30
+minutes.X = ((FMain.Width / 4) * 1) + 40
 minutes.Y = 10
 minutes.Alignment = Align.Center
 minutes.Background = Color.Transparent
@@ -50,7 +51,7 @@ minutes.MaxLength = 2
 seconds.ReadOnly = True
 seconds.Width = 100
 seconds.Height = 100
-seconds.X = ((FMain.Width / 4) * 2) + 30
+seconds.X = ((FMain.Width / 4) * 2) + 40
 seconds.Y = 10
 seconds.Alignment = Align.Center
 seconds.Background = Color.Transparent
@@ -66,7 +67,7 @@ seconds.MaxLength = 2
 miliSeconds.ReadOnly = True
 miliSeconds.Width = 50
 miliSeconds.Height = 100
-miliSeconds.X = ((FMain.Width / 4) * 3) + 30
+miliSeconds.X = ((FMain.Width / 4) * 3) + 40
 miliSeconds.Y = 10
 miliSeconds.Alignment = Align.Center
 miliSeconds.Background = Color.Transparent
@@ -81,8 +82,8 @@ miliSeconds.MaxLength = 1
 
 myDivisor1.Width = 100
 myDivisor1.Height = 100
-myDivisor1.X = ((FMain.Width / 4) * 0) + 93
-myDivisor1.Y = 0
+myDivisor1.X = ((FMain.Width / 4) * 0) + 100
+myDivisor1.Y = 3
 myDivisor1.Alignment = Align.Center
 myDivisor1.Background = Color.Transparent
 myDivisor1.Foreground = Color.DarkGreen
@@ -93,8 +94,8 @@ myDivisor1.Visible = True
 
 myDivisor2.Width = 100
 myDivisor2.Height = 100
-myDivisor2.X = ((FMain.Width / 4) * 1) + 93
-myDivisor2.Y = 0
+myDivisor2.X = ((FMain.Width / 4) * 1) + 100
+myDivisor2.Y = 3
 myDivisor2.Alignment = Align.Center
 myDivisor2.Background = Color.Transparent
 myDivisor2.Foreground = Color.DarkGreen
@@ -105,8 +106,8 @@ myDivisor2.Visible = True
 
 myDivisor3.Width = 100
 myDivisor3.Height = 100
-myDivisor3.X = ((FMain.Width / 4) * 2) + 93
-myDivisor3.Y = 0
+myDivisor3.X = ((FMain.Width / 4) * 2) + 100
+myDivisor3.Y = 3
 myDivisor3.Alignment = Align.Center
 myDivisor3.Background = Color.Transparent
 myDivisor3.Foreground = Color.DarkGreen
@@ -234,6 +235,43 @@ Public Sub btnEdit_Click()
     seconds.Background = Color.Transparent
     miliSeconds.ReadOnly = True
     miliSeconds.Background = Color.Transparent
+    
+    If Not IsNumber(hours.Text) Then 
+      
+      hours.Text = "00"
+    
+    Else If (Val(hours.Text) > 23) Then
+      
+      hours.Text = "00"
+    
+    Endif
+    
+    If Not IsNumber(minutes.Text) Then 
+      
+      minutes.Text = "00"
+    
+    Else If (Val(minutes.Text) > 59) Then
+      
+      minutes.Text = "00"
+    
+    Endif
+    
+    If Not IsNumber(seconds.Text) Then 
+      
+      seconds.Text = "00"
+    
+    Else If (Val(seconds.Text) > 59) Then
+      
+      seconds.Text = "00"
+    
+    Endif
+    
+    If Not IsNumber(miliSeconds.Text) Then 
+      
+      miliSeconds.Text = "0"
+
+    Endif
+    
     myClock.setHours(hours.Text)
     myClock.setMinutes(minutes.Text)
     myClock.setSeconds(seconds.Text)
