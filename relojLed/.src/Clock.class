@@ -3,7 +3,7 @@
 Private hours As Integer
 Private minutes As Integer
 Private seconds As Integer
-Private miliSeconds As Integer
+Private tenthsSeconds As Integer
 Private status As Boolean
 
 Public Sub _new()
@@ -11,7 +11,7 @@ Public Sub _new()
   hours = 0
   minutes = 0
   seconds = 0
-  miliSeconds = 0
+  tenthsSeconds = 0
   status = False
   
 End
@@ -32,7 +32,7 @@ Public Sub reset()
   hours = 0
   minutes = 0
   seconds = 0
-  miliSeconds = 0  
+  tenthsSeconds = 0  
   
 End
 
@@ -50,11 +50,11 @@ End
 'EL TIMER TIENE QUE TENER UN DELAY DE 100ms
 Public Sub runUp(isLoop As Boolean)
   
-  miliSeconds = miliSeconds + 1
+  tenthsSeconds = tenthsSeconds + 1
   
-  If miliSeconds > 9 Then
+  If tenthsSeconds > 9 Then
     
-    miliseconds = 0
+    tenthsSeconds = 0
     seconds = seconds + 1
     
     If seconds > 59 Then
@@ -78,7 +78,7 @@ Public Sub runUp(isLoop As Boolean)
             hours = 23
             minutes = 59
             seconds = 59
-            miliSeconds = 9
+            tenthsSeconds = 9
             stop()
           
           Endif 
@@ -95,11 +95,11 @@ End
 
 Public Sub runDown(isLoop As Boolean)
   
-  miliSeconds = miliSeconds - 1
+  tenthsSeconds = tenthsSeconds - 1
   
-  If miliSeconds <= 0 Then
+  If tenthsSeconds <= 0 Then
     
-    miliseconds = 9
+    tenthsSeconds = 9
     seconds = seconds - 1
     
     If seconds <= 0 Then
@@ -123,7 +123,7 @@ Public Sub runDown(isLoop As Boolean)
             hours = 0
             minutes = 0
             seconds = 0
-            miliSeconds = 0
+            tenthsSeconds = 0
             stop()
             
           Endif
@@ -156,9 +156,9 @@ Public Function getSeconds() As Integer
   
 End
 
-Public Function getMiliSeconds() As Integer
+Public Function gettenthsSeconds() As Integer
   
-  Return miliSeconds
+  Return tenthsSeconds
   
 End
 
@@ -180,9 +180,9 @@ Public Sub setSeconds(second As String)
   
 End
 
-Public Sub setMiliSeconds(miliSecond As String)
+Public Sub settenthsSeconds(miliSecond As String)
   
-  miliSeconds = Val(miliSecond)
+  tenthsSeconds = Val(miliSecond)
   
 End
 

@@ -11,7 +11,7 @@
   { seconds TextBox
     MoveScaled(48.8889,0,24,4)
   }
-  { miliSeconds TextBox
+  { tenthsSeconds TextBox
     MoveScaled(0,4,24,4)
   }
   { status Button

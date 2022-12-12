@@ -64,21 +64,21 @@ seconds.Enabled = True
 seconds.Visible = True
 seconds.MaxLength = 2
 
-miliSeconds.ReadOnly = True
-miliSeconds.Width = 50
-miliSeconds.Height = 100
-miliSeconds.X = ((FMain.Width / 4) * 3) + 40
-miliSeconds.Y = 10
-miliSeconds.Alignment = Align.Center
-miliSeconds.Background = Color.Transparent
-miliSeconds.Foreground = Color.DarkGreen
-miliSeconds.Font = Font["Mono, 64"]
-miliSeconds.Border = False
-miliSeconds.Text = "0"
-miliSeconds.Placeholder = "Hora(00-23)"
-miliSeconds.Enabled = True
-miliSeconds.Visible = True
-miliSeconds.MaxLength = 1
+tenthsSeconds.ReadOnly = True
+tenthsSeconds.Width = 50
+tenthsSeconds.Height = 100
+tenthsSeconds.X = ((FMain.Width / 4) * 3) + 40
+tenthsSeconds.Y = 10
+tenthsSeconds.Alignment = Align.Center
+tenthsSeconds.Background = Color.Transparent
+tenthsSeconds.Foreground = Color.DarkGreen
+tenthsSeconds.Font = Font["Mono, 64"]
+tenthsSeconds.Border = False
+tenthsSeconds.Text = "0"
+tenthsSeconds.Placeholder = "Hora(00-23)"
+tenthsSeconds.Enabled = True
+tenthsSeconds.Visible = True
+tenthsSeconds.MaxLength = 1
 
 myDivisor1.Width = 100
 myDivisor1.Height = 100
@@ -175,7 +175,7 @@ Public Sub reset_Click()
   hours.Text = "00"
   minutes.Text = "00"
   seconds.Text = "00"
-  miliSeconds.Text = "0"
+  tenthsSeconds.Text = "0"
   status.Text = "Reproducir"
   upOpt.Enabled = True
   downOpt.Enabled = True
@@ -215,8 +215,8 @@ Public Sub btnEdit_Click()
     minutes.Background = Color.RGB(80, 80, 80)
     seconds.ReadOnly = False
     seconds.Background = Color.RGB(80, 80, 80)
-    miliSeconds.ReadOnly = False
-    miliSeconds.Background = Color.RGB(80, 80, 80)
+    tenthsSeconds.ReadOnly = False
+    tenthsSeconds.Background = Color.RGB(80, 80, 80)
     myClock.stop()
     status.Text = "Reproducir"
     upOpt.Enabled = True
@@ -233,8 +233,8 @@ Public Sub btnEdit_Click()
     minutes.Background = Color.Transparent
     seconds.ReadOnly = True
     seconds.Background = Color.Transparent
-    miliSeconds.ReadOnly = True
-    miliSeconds.Background = Color.Transparent
+    tenthsSeconds.ReadOnly = True
+    tenthsSeconds.Background = Color.Transparent
     
     If Not IsNumber(hours.Text) Then 
       
@@ -266,16 +266,16 @@ Public Sub btnEdit_Click()
     
     Endif
     
-    If Not IsNumber(miliSeconds.Text) Then 
+    If Not IsNumber(tenthsSeconds.Text) Then 
       
-      miliSeconds.Text = myClock.getMiliSeconds()
+      tenthsSeconds.Text = myClock.gettenthsSeconds()
 
     Endif
     
     myClock.setHours(hours.Text)
     myClock.setMinutes(minutes.Text)
     myClock.setSeconds(seconds.Text)
-    myClock.setMiliSeconds(miliSeconds.Text)
+    myClock.settenthsSeconds(tenthsSeconds.Text)
   
   Endif
   
@@ -331,7 +331,7 @@ Public Sub myTimer1_Timer()
      
     Endif
     
-    miliSeconds.Text = myClock.getMiliSeconds()
+    tenthsSeconds.Text = myClock.gettenthsSeconds()
     
   Endif
 
@@ -341,7 +341,7 @@ Public Sub myTimer1_Timer()
   hours.Refresh()
   minutes.Refresh()
   seconds.Refresh()
-  miliSeconds.Refresh()
+  tenthsSeconds.Refresh()
   
 
 End
